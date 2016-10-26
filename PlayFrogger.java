@@ -5,14 +5,18 @@ import java.awt.*;
 public class PlayFrogger extends JFrame {
 
     public static JLabel lab1;
-    
+    public static JLabel lab2;
 
     public PlayFrogger() {
+        setSize(310,800);
         lab1 = new JLabel("LEVEL");
-        lab1.setFont(new Font("Courier New", Font.TYPE1_FONT, 12));
-        getContentPane().setLayout(new FlowLayout());
-        add(new FroggerComponent());
+        lab1.setFont(new Font("Courier New", Font.ITALIC, 18));
+        lab2=new JLabel("♥♥♥♥♥");
+        GridLayout g=new GridLayout(2,2);
+        getContentPane().setLayout(g);
         add(lab1);
+        add(lab2);
+        add(new FroggerComponent());
         setResizable(false);
         setLocationRelativeTo(null);
         pack();
@@ -25,7 +29,5 @@ public class PlayFrogger extends JFrame {
     public static void main(String[] args) {
         new PlayFrogger();
     }
-        public JLabel getLab() {
-        return this.lab1;
-    }
+     
 }
