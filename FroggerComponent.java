@@ -1,4 +1,5 @@
 import java.awt.*;
+import java.util.prefs.*;
 import javax.swing.*;
 import java.awt.event.*;
 import java.util.*;
@@ -13,6 +14,9 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
     private int level = 0;
     //private JLabel l;
     private int life=5;
+    private int score = 0;
+    private int highscore = readPreference();
+    private static final String HIGHSCORE = "highscore1";
 
     //creo playfrogger
     //PlayFrogger pf = new PlayFrogger();
@@ -128,6 +132,7 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
         }
         if (engine.getState() == FroggerState.WON) {
             level++;
+            score += 300;
             if (level >= levels.size()) {
                 JOptionPane.showMessageDialog(this, "You have beaten this game.");
                 System.exit(0);
@@ -154,68 +159,105 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
 //    JLabel l = new JLabel();
 //    l = pf.getLab();
 //    l.setText("1");
+            checkHighscore();
             PlayFrogger.lab1.setText("LEVEL 1 - Easy");
+            PlayFrogger.lab3.setText("SCORE: " + Integer.toString(score));
             //PlayFrogger.lab1.setHorizontalAlignment(JLabel.CENTER);
             //PlayFrogger.lab1.setLocation(200,200);
             PlayFrogger.lab1.setLocation((369 - PlayFrogger.lab1.getWidth()) / 2, 5);
             PlayFrogger.lab1.setForeground(Color.BLUE);
 //                            PlayFrogger.lab1.setFont(new Font("Courier New", Font.ITALIC, 12));
+            PlayFrogger.lab3.setLocation((369 - PlayFrogger.lab3.getWidth()), 56);
+            PlayFrogger.lab3.setForeground(Color.BLUE);
 
         } else if (level == 1) {
+            checkHighscore();
             PlayFrogger.lab1.setText("LEVEL 2 - Easy");
+            PlayFrogger.lab3.setText("SCORE: " + Integer.toString(score));
             //PlayFrogger.lab1.setHorizontalAlignment(JLabel.CENTER);
             //PlayFrogger.lab1.setLocation(200,200);
             PlayFrogger.lab1.setLocation((369 - PlayFrogger.lab1.getWidth()) / 2, 5);
             PlayFrogger.lab1.setForeground(Color.RED);
+            PlayFrogger.lab3.setLocation((369 - PlayFrogger.lab3.getWidth()), 56);
+            PlayFrogger.lab3.setForeground(Color.BLUE);
+            
 
         } else if (level == 2) {
+            checkHighscore();
             PlayFrogger.lab1.setText("LEVEL 3 - Medium");
+            PlayFrogger.lab3.setText("SCORE: " + Integer.toString(score));
             //PlayFrogger.lab1.setHorizontalAlignment(JLabel.CENTER);
             //PlayFrogger.lab1.setLocation(200,200);
             PlayFrogger.lab1.setLocation((369 - PlayFrogger.lab1.getWidth()) / 2, 5);
             PlayFrogger.lab1.setForeground(Color.GREEN);
+            PlayFrogger.lab3.setLocation((369 - PlayFrogger.lab3.getWidth()), 56);
+            PlayFrogger.lab3.setForeground(Color.BLUE);
 
         } else if (level == 3) {
+            checkHighscore();
             PlayFrogger.lab1.setText("LEVEL 4 - Medium");
+            PlayFrogger.lab3.setText("SCORE: " + Integer.toString(score));
             //PlayFrogger.lab1.setHorizontalAlignment(JLabel.CENTER);
             //PlayFrogger.lab1.setLocation(200,200);
             PlayFrogger.lab1.setLocation((369 - PlayFrogger.lab1.getWidth()) / 2, 5);
             PlayFrogger.lab1.setForeground(Color.MAGENTA);
+            PlayFrogger.lab3.setLocation((369 - PlayFrogger.lab3.getWidth()), 56);
+            PlayFrogger.lab3.setForeground(Color.BLUE);
 
         } else if (level == 4) {
+            checkHighscore();
             PlayFrogger.lab1.setText("LEVEL 5 - Medium");
+            PlayFrogger.lab3.setText("SCORE: " + Integer.toString(score));
             //PlayFrogger.lab1.setHorizontalAlignment(JLabel.CENTER);
             //PlayFrogger.lab1.setLocation(200,200);
             PlayFrogger.lab1.setLocation((369 - PlayFrogger.lab1.getWidth()) / 2, 5);
             PlayFrogger.lab1.setForeground(Color.PINK);
+            PlayFrogger.lab3.setLocation((369 - PlayFrogger.lab3.getWidth()), 56);
+            PlayFrogger.lab3.setForeground(Color.BLUE);
 
         } else if (level == 5) {
+            checkHighscore();
             PlayFrogger.lab1.setText("LEVEL 6 - Difficult");
+            PlayFrogger.lab3.setText("SCORE: " + Integer.toString(score));
             //PlayFrogger.lab1.setHorizontalAlignment(JLabel.CENTER);
             //PlayFrogger.lab1.setLocation(200,200);
             PlayFrogger.lab1.setLocation((369 - PlayFrogger.lab1.getWidth()) / 2, 5);
             PlayFrogger.lab1.setForeground(Color.GRAY);
+            PlayFrogger.lab3.setLocation((369 - PlayFrogger.lab3.getWidth()), 56);
+            PlayFrogger.lab3.setForeground(Color.BLUE);
 
         }else if (level == 6) {
+            checkHighscore();
             PlayFrogger.lab1.setText("LEVEL 6 - Difficult");
+            PlayFrogger.lab3.setText("SCORE: " + Integer.toString(score));
             //PlayFrogger.lab1.setHorizontalAlignment(JLabel.CENTER);
             //PlayFrogger.lab1.setLocation(200,200);
             PlayFrogger.lab1.setLocation((369 - PlayFrogger.lab1.getWidth()) / 2, 5);
             PlayFrogger.lab1.setForeground(Color.GRAY);
+            PlayFrogger.lab3.setLocation((369 - PlayFrogger.lab3.getWidth()), 56);
+            PlayFrogger.lab3.setForeground(Color.BLUE);
 
         }else if (level == 7) {
+            checkHighscore();
             PlayFrogger.lab1.setText("LEVEL 7 - Difficult");
+            PlayFrogger.lab3.setText("SCORE: " + Integer.toString(score));
             //PlayFrogger.lab1.setHorizontalAlignment(JLabel.CENTER);
             //PlayFrogger.lab1.setLocation(200,200);
             PlayFrogger.lab1.setLocation((369 - PlayFrogger.lab1.getWidth()) / 2, 5);
             PlayFrogger.lab1.setForeground(Color.GRAY);
+            PlayFrogger.lab3.setLocation((369 - PlayFrogger.lab3.getWidth()), 56);
+            PlayFrogger.lab3.setForeground(Color.BLUE);
 
         }else if (level == 8) {
+            checkHighscore();
             PlayFrogger.lab1.setText("LEVEL 9 - Impossible");
+            PlayFrogger.lab3.setText("SCORE: " + Integer.toString(score));
             //PlayFrogger.lab1.setHorizontalAlignment(JLabel.CENTER);
             //PlayFrogger.lab1.setLocation(200,200);
             PlayFrogger.lab1.setLocation((369 - PlayFrogger.lab1.getWidth()) / 2, 5);
             PlayFrogger.lab1.setForeground(Color.GRAY);
+            PlayFrogger.lab3.setLocation((369 - PlayFrogger.lab3.getWidth()), 56);
+            PlayFrogger.lab3.setForeground(Color.BLUE);
 
         }
           
@@ -251,5 +293,30 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
     }
 
     public void keyTyped(KeyEvent ke) {
+    }
+    
+    private void checkHighscore() {
+        if (score > highscore) {
+            highscore = score;
+
+        }
+
+        PlayFrogger.lab4.setText("HIGHSCORE: " + Integer.toString(highscore));
+        PlayFrogger.lab4.setLocation((369 - PlayFrogger.lab4.getWidth()), 46);
+        PlayFrogger.lab4.setForeground(Color.RED);
+        savePreference(highscore);
+
+    }
+
+    public void savePreference(int highscore) {
+        Preferences prefs = Preferences.userNodeForPackage(FroggerComponent.class);
+
+        prefs.putInt(HIGHSCORE, highscore);
+    }
+
+    public int readPreference() {
+        Preferences prefs = Preferences.userNodeForPackage(FroggerComponent.class);
+
+        return prefs.getInt(HIGHSCORE, 0);
     }
 }
