@@ -124,12 +124,7 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
         {
             PlayFrogger.lab2.setText("");
             JOptionPane.showMessageDialog(this, "Game Over","No more lifes",JOptionPane.ERROR_MESSAGE);
-            downPressed=false;
-            leftPressed=false;
-            rightPressed=false;
-            upPressed=false;
-            level=0;
-            life=5;
+            System.exit(0);
         }
         if (engine.getState() == FroggerState.WON) {
             level++;
@@ -146,7 +141,7 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
             String hearts="";
             for(int i=0;i<life;++i)
             {
-                hearts=hearts+"♥";
+                hearts=hearts+"?";
                 PlayFrogger.lab2.setText(hearts);
             }
         }
@@ -188,7 +183,7 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
             PlayFrogger.lab1.setForeground(Color.MAGENTA);
 
         } else if (level == 4) {
-            PlayFrogger.lab1.setText("LEVEL 5 - Difficult");
+            PlayFrogger.lab1.setText("LEVEL 5 - Medium");
             //PlayFrogger.lab1.setHorizontalAlignment(JLabel.CENTER);
             //PlayFrogger.lab1.setLocation(200,200);
             PlayFrogger.lab1.setLocation((369 - PlayFrogger.lab1.getWidth()) / 2, 5);
@@ -201,7 +196,29 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
             PlayFrogger.lab1.setLocation((369 - PlayFrogger.lab1.getWidth()) / 2, 5);
             PlayFrogger.lab1.setForeground(Color.GRAY);
 
+        }else if (level == 6) {
+            PlayFrogger.lab1.setText("LEVEL 6 - Difficult");
+            //PlayFrogger.lab1.setHorizontalAlignment(JLabel.CENTER);
+            //PlayFrogger.lab1.setLocation(200,200);
+            PlayFrogger.lab1.setLocation((369 - PlayFrogger.lab1.getWidth()) / 2, 5);
+            PlayFrogger.lab1.setForeground(Color.GRAY);
+
+        }else if (level == 7) {
+            PlayFrogger.lab1.setText("LEVEL 7 - Difficult");
+            //PlayFrogger.lab1.setHorizontalAlignment(JLabel.CENTER);
+            //PlayFrogger.lab1.setLocation(200,200);
+            PlayFrogger.lab1.setLocation((369 - PlayFrogger.lab1.getWidth()) / 2, 5);
+            PlayFrogger.lab1.setForeground(Color.GRAY);
+
+        }else if (level == 8) {
+            PlayFrogger.lab1.setText("LEVEL 9 - Impossible");
+            //PlayFrogger.lab1.setHorizontalAlignment(JLabel.CENTER);
+            //PlayFrogger.lab1.setLocation(200,200);
+            PlayFrogger.lab1.setLocation((369 - PlayFrogger.lab1.getWidth()) / 2, 5);
+            PlayFrogger.lab1.setForeground(Color.GRAY);
+
         }
+          
     }
 
     public void keyPressed(KeyEvent ke) {
