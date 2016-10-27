@@ -36,8 +36,7 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
          
         levels.add(new FroggerLevel(
                 new int[]{1, 2, 1},
-                new String[]{"LLL       MM      RRR", "RRR    MMM    LL   MMM",
-                    "RR    MM   LL    RR  RRR"}));
+                new String[]{"RR         L  ", "BB      RR     ", "    RR    MM     "}));
         levels.add(new FroggerLevel(
                 new int[]{1, 5, 1},
                 new String[]{"LLL       MM      RRR", "RRR          MMM",
@@ -126,9 +125,15 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
 
         if(life==0)
         {
-            PlayFrogger.lab2.setText("");
+            PlayFrogger.lab2.setText("♥♥♥♥♥");
             JOptionPane.showMessageDialog(this, "Game Over","No more lifes",JOptionPane.ERROR_MESSAGE);
-            System.exit(0);
+            downPressed=false;
+            leftPressed=false;
+            rightPressed=false;
+            upPressed=false;
+            level=0;
+            life=5;
+            engine = new FroggerLevelEngine(levels.get(level));
         }
         if (engine.getState() == FroggerState.WON) {
             level++;
@@ -138,6 +143,22 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
                 System.exit(0);
             }
             engine = new FroggerLevelEngine(levels.get(level));
+            if (life>=5){
+                String hearts="";
+                for(int i=0;i<life;++i)
+                {
+                    hearts=hearts+"♥";
+                    PlayFrogger.lab2.setText(hearts);
+                }
+            } else{
+                ++life;
+                String hearts="";
+                for(int i=0;i<life;++i)
+                {
+                    hearts=hearts+"♥";
+                    PlayFrogger.lab2.setText(hearts);
+                }
+            }
         }
 
         if (engine.getState() == FroggerState.HIT) {
@@ -146,7 +167,7 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
             String hearts="";
             for(int i=0;i<life;++i)
             {
-                hearts=hearts+"?";
+                hearts=hearts+"♥";
                 PlayFrogger.lab2.setText(hearts);
             }
         }
