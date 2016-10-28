@@ -125,7 +125,7 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
 
         if(life==0)
         {
-            PlayFrogger.lab2.setText("?????");
+            PlayFrogger.lab2.setText("♥♥♥♥♥");
             JOptionPane.showMessageDialog(this, "Game Over","No more lifes",JOptionPane.ERROR_MESSAGE);
             downPressed=false;
             leftPressed=false;
@@ -147,7 +147,7 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
                 String hearts="";
                 for(int i=0;i<life;++i)
                 {
-                    hearts=hearts+"?";
+                    hearts=hearts+"♥";
                     PlayFrogger.lab2.setText(hearts);
                 }
             } else{
@@ -155,7 +155,7 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
                 String hearts="";
                 for(int i=0;i<life;++i)
                 {
-                    hearts=hearts+"?";
+                    hearts=hearts+"♥";
                     PlayFrogger.lab2.setText(hearts);
                 }
             }
@@ -167,7 +167,7 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
             String hearts="";
             for(int i=0;i<life;++i)
             {
-                hearts=hearts+"?";
+                hearts=hearts+"♥";
                 PlayFrogger.lab2.setText(hearts);
             }
         }
