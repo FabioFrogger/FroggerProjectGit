@@ -36,26 +36,26 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
          
         levels.add(new FroggerLevel(
                 new int[]{1, 2, 1},
-                new String[]{"RR         L  ", "BB      RR     ", "    RR    MM     "}));
+                new String[]{"  YYYY         L  ", " BB      RR     ", "    RR    MM     "}));
         levels.add(new FroggerLevel(
                 new int[]{1, 5, 1},
-                new String[]{"LLL       MM      RRR", "RRR          MMM",
+                new String[]{"LLL       GGG      RRR", "RRR          MMM",
                     "RR    MM   LL    RR  RRR"}));
 
         levels.add(new FroggerLevel(
                 new int[]{2, 1, 2, 1, 2},
-                new String[]{"RR         L  ", "BB  LL  RR     ", "    RR    MM     ",
+                new String[]{"RR         L  ", "BB  CCCCCC   RR     ", "    RR    MM     ",
                     "MMM     MMM     ", "RR      L     "}));
         levels.add(new FroggerLevel(
                 new int[]{1, 2, 1, 3, 1},
-                new String[]{"LLL       MM      RRR    ", "RRR    MMM    LL   MMM   ",
+                new String[]{"LLL       MM      RRR    ", "RRR    GGGG    LL   MMM   ",
                     "RR    MM   LL    RR  RRR  ", "  LLLL      BBBB      MMM  ", "  MMMMM        LLLL     MMMM  "}));
 
         levels.add(new FroggerLevel(
                 new int[]{1, 1, 1, 1, 1, 1, 1},
                 new String[]{"RR     RR     RR     ", "B   B   B   B   B   ",
                     "MMM   MMM     MMM    ", "RR     RR     RR     ",
-                    "B   B   B   B   B   B   ", "MMM   MMM     MMM    L ",
+                    "Y   Y   B   B   B   B   ", "MMM   MMM     MMM    L ",
                     "   BBB    BBB L    BBB"}));
 
         levels.add(new FroggerLevel(
@@ -125,7 +125,7 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
 
         if(life==0)
         {
-            PlayFrogger.lab2.setText("♥♥♥♥♥");
+            PlayFrogger.lab2.setText("?????");
             JOptionPane.showMessageDialog(this, "Game Over","No more lifes",JOptionPane.ERROR_MESSAGE);
             downPressed=false;
             leftPressed=false;
@@ -147,7 +147,7 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
                 String hearts="";
                 for(int i=0;i<life;++i)
                 {
-                    hearts=hearts+"♥";
+                    hearts=hearts+"?";
                     PlayFrogger.lab2.setText(hearts);
                 }
             } else{
@@ -155,7 +155,7 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
                 String hearts="";
                 for(int i=0;i<life;++i)
                 {
-                    hearts=hearts+"♥";
+                    hearts=hearts+"?";
                     PlayFrogger.lab2.setText(hearts);
                 }
             }
@@ -167,7 +167,7 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
             String hearts="";
             for(int i=0;i<life;++i)
             {
-                hearts=hearts+"♥";
+                hearts=hearts+"?";
                 PlayFrogger.lab2.setText(hearts);
             }
         }
