@@ -7,7 +7,7 @@ package frogger;
 
 /**
  *
- * @author studente
+ * @author Fabio
  */
 public class Frogger {
 

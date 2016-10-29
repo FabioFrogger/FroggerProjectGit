@@ -1,4 +1,5 @@
 
+import frogger.Cronometro;
 import javax.swing.*;
 import java.awt.*;
 
@@ -8,6 +9,7 @@ public class PlayFrogger extends JFrame {
     public static JLabel lab2;
     public static JLabel lab3;
     public static JLabel lab4;
+    public static Cronometro c;
 
     public PlayFrogger() {
         setSize(310,800);
@@ -18,6 +20,9 @@ public class PlayFrogger extends JFrame {
         lab3.setFont(new Font("Courier New", Font.TYPE1_FONT, 12));
         lab4 = new JLabel("HIGHSCORE");
         lab4.setFont(new Font("Courier New", Font.TYPE1_FONT, 12));
+        c=new Cronometro();
+        
+        c.inizio();
         GridLayout g=new GridLayout(2,2);
         getContentPane().setLayout(g);
         add(lab1);

@@ -126,6 +126,7 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
         if(life==0)
         {
             PlayFrogger.lab2.setText("♥♥♥♥♥");
+            PlayFrogger.c.stop();
             JOptionPane.showMessageDialog(this, "Game Over","No more lifes",JOptionPane.ERROR_MESSAGE);
             downPressed=false;
             leftPressed=false;
@@ -134,6 +135,8 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
             level=0;
             life=5;
             engine = new FroggerLevelEngine(levels.get(level));
+            PlayFrogger.c.inizio();
+            
         }
         if (engine.getState() == FroggerState.WON) {
             level++;
