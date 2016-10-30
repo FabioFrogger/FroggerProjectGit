@@ -252,7 +252,7 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
 
         }else if (level == 6) {
             checkHighscore();
-            PlayFrogger.lab1.setText("LEVEL 6 - Difficult");
+            PlayFrogger.lab1.setText("LEVEL 7 - Difficult");
             PlayFrogger.lab3.setText("SCORE: " + Integer.toString(score));
             //PlayFrogger.lab1.setHorizontalAlignment(JLabel.CENTER);
             //PlayFrogger.lab1.setLocation(200,200);
@@ -263,7 +263,7 @@ public class FroggerComponent extends JComponent implements KeyListener, Runnabl
 
         }else if (level == 7) {
             checkHighscore();
-            PlayFrogger.lab1.setText("LEVEL 7 - Difficult");
+            PlayFrogger.lab1.setText("LEVEL 8 - Difficult");
             PlayFrogger.lab3.setText("SCORE: " + Integer.toString(score));
             //PlayFrogger.lab1.setHorizontalAlignment(JLabel.CENTER);
             //PlayFrogger.lab1.setLocation(200,200);
